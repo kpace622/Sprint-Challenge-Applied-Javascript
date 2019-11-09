@@ -17,3 +17,39 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselEntryPoint = document.querySelector('.carousel-container');
+
+const carouselFunction = () => {
+  const mainCarousel = document.createElement('div');
+  const left = document.createElement('div');
+  const img1 = document.createElement('img');
+  const img2 = document.createElement('img');
+  const img3 = document.createElement('img');
+  const img4 = document.createElement('img');
+  const right = document.createElement('div');
+
+  mainCarousel.append(left, img1, img2, img3, img4, right);
+
+  mainCarousel.classList.add('carousel');
+  left.classList.add('left-button');
+  right.classList.add('right-button');
+
+  img1.src = '../assets/carousel/mountains.jpeg';
+  img2.src = '../assets/carousel/computer.jpeg';
+  img3.src = '../assets/carousel/trees.jpeg';
+  img4.src = '../assets/carousel/turntable.jpeg';
+
+  return mainCarousel;
+}
+
+carouselEntryPoint.appendChild(carouselFunction());
+
+const firstImg = document.querySelector('.carousel-container', '.carousel', 'img');
+
+const rbutton = document.querySelector('.right-button');
+
+rbutton.addEventListener('click', () => {
+  firstImg.classList.toggle('img');
+  console.log("clicked!")
+})
